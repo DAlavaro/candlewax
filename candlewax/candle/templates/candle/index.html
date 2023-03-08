@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Восковая свеча!</title>
-</head>
-<body>
-<div class="sitetop">
-    <div class="sitetop2">
-        <a href="#">
-            <img src="static/candle/images/logo.png" alt="Восковая свеча"Ю
-        </a>
-    </div>
-</div>
+{% extends 'candle/base.html' %}
 
-</body>
-</html>
+{% block content %}
+<h1>{{title}}</h1>
+<p>Содержимое главной страницы</p>
+{% endblock %}
