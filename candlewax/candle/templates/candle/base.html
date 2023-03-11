@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,25 +13,20 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Инфо</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">О нас</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Доставка</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Отзывы</a>
-        </li>
+          {% for p in posts %}
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url p.url_name %}">{{ p.title }}</a>
+            </li>
+          {% endfor %}
       </ul>
+
     </div>
   </div>
 </nav>
